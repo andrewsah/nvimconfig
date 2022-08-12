@@ -22,8 +22,8 @@ return require('packer').startup(
 
         -- gruvbox theme
         use { "ellisonleao/gruvbox.nvim" }
-        -- tresitter (better syntax highlight)
 
+        -- tresitter (better syntax highlight)
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
         -- config for native lsp
