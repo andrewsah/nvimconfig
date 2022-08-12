@@ -1,6 +1,6 @@
 local sources = {
   'andrea.set',
-  'andrea.map',
+  -- 'andrea.map',
   'andrea.plugins.packer',
   'andrea.plugins.telescope',
   -- 'andrea.plugins.nightfox',
