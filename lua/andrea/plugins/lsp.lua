@@ -1,14 +1,14 @@
-local map = vim.keymap.set
+local nnoremap = require('andrea.keymap').nnoremap
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
-    map('n', 'K', vim.lsp.buf.hover, { desc = 'Hover symbol details', buffer = bufnr })
-    map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition', buffer = bufnr })
-    map('n', 'gt', vim.lsp.buf.type_definition, { desc = 'Go to type definition', buffer = bufnr })
-    map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation', buffer = bufnr })
-    map('n', 'rs', vim.lsp.buf.rename, { desc = 'Rename symbol', buffer = bufnr })
-    map('n', '<leader>fd', vim.lsp.buf.formatting, { desc = 'Format the current document', buffer = bufnr })
+    nnoremap('K', vim.lsp.buf.hover, { desc = 'Hover symbol details', buffer = bufnr })
+    nnoremap('gd', vim.lsp.buf.definition, { desc = 'Go to definition', buffer = bufnr })
+    nnoremap('gt', vim.lsp.buf.type_definition, { desc = 'Go to type definition', buffer = bufnr })
+    nnoremap('gi', vim.lsp.buf.implementation, { desc = 'Go to implementation', buffer = bufnr })
+    nnoremap('rs', vim.lsp.buf.rename, { desc = 'Rename symbol', buffer = bufnr })
+    nnoremap('<leader>fd', vim.lsp.buf.formatting, { desc = 'Format the current document', buffer = bufnr })
 end
 
 local ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
