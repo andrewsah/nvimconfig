@@ -1,8 +1,14 @@
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.mouse = a
 
+-- mouse support
+vim.opt.mouse = 'a'
+
+-- line number and relative
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+-- Keep x lines after the cursor
+vim.opt.scrolloff = 6
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -19,9 +25,13 @@ vim.opt.writebackup = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
 
 vim.opt.updatetime = 50
 
 vim.opt.cursorline = true
 
+vim.opt.showmode = false
+
+-- map leader to <Space>
 vim.g.mapleader = ' '

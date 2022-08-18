@@ -3,6 +3,7 @@ local sources = {
   -- 'andrea.map',
   'andrea.plugins.packer',
   'andrea.plugins.telescope',
+  'andrea.plugins.treesitter',
   -- 'andrea.plugins.nightfox',
   'andrea.plugins.gruvbox',
   'andrea.plugins.lualine',

@@ -5,10 +5,12 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local on_attach = function(client, bufnr)
     nnoremap('K', vim.lsp.buf.hover, { desc = 'Hover symbol details', buffer = bufnr })
     nnoremap('gd', vim.lsp.buf.definition, { desc = 'Go to definition', buffer = bufnr })
+    nnoremap('gD', vim.lsp.buf.declaration , { desc = 'Go to definition', buffer = bufnr })
     nnoremap('gt', vim.lsp.buf.type_definition, { desc = 'Go to type definition', buffer = bufnr })
     nnoremap('gi', vim.lsp.buf.implementation, { desc = 'Go to implementation', buffer = bufnr })
     nnoremap('rs', vim.lsp.buf.rename, { desc = 'Rename symbol', buffer = bufnr })
-    nnoremap('<leader>fd', vim.lsp.buf.formatting, { desc = 'Format the current document', buffer = bufnr })
+    nnoremap('fd', vim.lsp.buf.formatting, { desc = 'Format the current document', buffer = bufnr })
+    nnoremap('ca', vim.lsp.buf.code_action, { desc = 'Show code actions to fix stuff', buffer = bufnr })
 end
 
 local ok, lsp_installer = pcall(require, 'nvim-lsp-installer')

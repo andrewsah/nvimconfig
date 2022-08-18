@@ -46,5 +46,8 @@ return require('packer').startup(
         -- comment
         use('terrortylor/nvim-comment')
 
+        -- colored brackets
+        use('p00f/nvim-ts-rainbow')
+
     end
 )
