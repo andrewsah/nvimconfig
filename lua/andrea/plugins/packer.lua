@@ -17,9 +17,6 @@ return require('packer').startup(
         -- lualine (status line)
         use('nvim-lualine/lualine.nvim')
 
-        -- nightfox theme
-        -- use('EdenEast/nightfox.nvim')
-
         -- gruvbox theme
         use { "ellisonleao/gruvbox.nvim" }
 
@@ -39,9 +36,6 @@ return require('packer').startup(
         use('hrsh7th/cmp-path')
         use('L3MON4D3/LuaSnip')
         use('saadparwaiz1/cmp_luasnip')
-
-        -- indent lines
-        -- use("lukas-reineke/indent-blankline.nvim")
 
         -- comment
         use('terrortylor/nvim-comment')

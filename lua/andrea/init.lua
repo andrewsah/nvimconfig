@@ -1,16 +1,6 @@
 local sources = {
   'andrea.set',
-  -- 'andrea.map',
   'andrea.plugins.packer',
-  'andrea.plugins.telescope',
-  'andrea.plugins.treesitter',
-  -- 'andrea.plugins.nightfox',
-  'andrea.plugins.gruvbox',
-  'andrea.plugins.lualine',
-  'andrea.plugins.lsp-installer',
-  'andrea.plugins.lsp',
-  'andrea.plugins.cmp',
-  'andrea.plugins.comment'
 }
 
 for _, source in ipairs(sources) do
