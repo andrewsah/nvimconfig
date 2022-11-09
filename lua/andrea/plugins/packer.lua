@@ -1,4 +1,4 @@
-return require('packer').startup(
+require('packer').startup(
     function()
 
         -- packer can manage itself
@@ -26,8 +26,10 @@ return require('packer').startup(
         -- config for native lsp
         use('neovim/nvim-lspconfig')
 
-        -- helper for lsp's servers
-        use('williamboman/nvim-lsp-installer')
+        -- helper for lsp's servers installation
+        -- use('williamboman/nvim-lsp-installer')
+        use { "williamboman/mason.nvim" }
+        use { "williamboman/mason-lspconfig.nvim" }
 
         -- lsp completition
         use('hrsh7th/nvim-cmp')
@@ -36,6 +38,7 @@ return require('packer').startup(
         use('hrsh7th/cmp-path')
         use('L3MON4D3/LuaSnip')
         use('saadparwaiz1/cmp_luasnip')
+        use('onsails/lspkind.nvim')
 
         -- comment
         use('terrortylor/nvim-comment')
@@ -43,5 +46,20 @@ return require('packer').startup(
         -- colored brackets
         use('p00f/nvim-ts-rainbow')
 
+        -- sticky header
+        use('nvim-treesitter/nvim-treesitter-context')
+
+        -- todo comments
+        use {
+            "folke/todo-comments.nvim",
+            requires = "nvim-lua/plenary.nvim",
+            config = function()
+                require("todo-comments").setup {
+                    -- your configuration comes here
+                    -- or leave it empty to use the default settings
+                    -- refer to the configuration section below
+                }
+            end
+        }
     end
 )

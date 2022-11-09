@@ -1,1 +1,1 @@
-return require('nvim_comment').setup({ comment_empty = false })
+require('nvim_comment').setup({ comment_empty = false })

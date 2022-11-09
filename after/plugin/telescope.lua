@@ -9,6 +9,11 @@ require('telescope').setup {
                 prompt_position = 'top'
             }
         },
+        borderchars = {
+            prompt = { " ", " ", "─", " ", " ", " ", " ", " " },
+            results = { " " },
+            preview = { " " },
+        },
         mappings = {
             i = {
                 ['<C-j>'] = require('telescope.actions').move_selection_next,
@@ -19,4 +24,4 @@ require('telescope').setup {
     }
 }
 
-return require('telescope').load_extension('fzf')
+require('telescope').load_extension('fzf')

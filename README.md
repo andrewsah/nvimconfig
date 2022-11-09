@@ -1,3 +1,3 @@
 # nvimconfig
 
-files di configurazione nvim.
+nvim configuration files.

@@ -8,3 +8,4 @@ nnoremap('<leader>c', '<cmd>close<cr>')
 nnoremap('<leader>xx', '<cmd>Ex<cr>') -- netrw mapping
 nnoremap('<leader>bc', '<cmd>bd<cr>') -- buffer close mapping
 
+nnoremap('<leader>st', '<cmd>TodoTelescope<cr>') -- todo comments in telescope

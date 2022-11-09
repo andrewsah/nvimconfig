@@ -1,37 +1,42 @@
-vim.opt.clipboard = 'unnamedplus'
+local opt = vim.opt
+
+opt.clipboard = 'unnamedplus'
 
 -- mouse support
-vim.opt.mouse = 'a'
+opt.mouse = 'a'
 
 -- line number and relative
-vim.opt.number = true
-vim.opt.relativenumber = true
+opt.number = true
+opt.relativenumber = true
 
 -- Keep x lines after the cursor
-vim.opt.scrolloff = 6
+opt.scrolloff = 6
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 
-vim.opt.autoindent = true
-vim.opt.smartindent = true
+opt.autoindent = true
+opt.smartindent = true
 
-vim.opt.wrap = false
+opt.wrap = false
 
-vim.opt.swapfile = false
-vim.opt.writebackup = false
+opt.swapfile = false
+opt.writebackup = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
+opt.hlsearch = false
+opt.incsearch = true
+opt.ignorecase = true
 
-vim.opt.updatetime = 50
+opt.cursorline = true
 
-vim.opt.cursorline = true
+opt.showmode = false
 
-vim.opt.showmode = false
+opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
+opt.splitright = true
+opt.splitbelow = true
 
 -- map leader to <Space>
 vim.g.mapleader = ' '
