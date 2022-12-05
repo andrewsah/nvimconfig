@@ -1,6 +1,14 @@
+local ok, cmp_nvim_lsp, mason_lsp, lspconfig
+ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+ok, mason_lsp = pcall(require, 'mason-lspconfig')
+ok, lspconfig = pcall(require, 'lspconfig')
+if not ok then
+    return
+end
+
 local nnoremap = require('andrea.keymap').nnoremap
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
     nnoremap('K', vim.lsp.buf.hover, { desc = 'Hover symbol details', buffer = bufnr })
@@ -13,12 +21,9 @@ local on_attach = function(client, bufnr)
     nnoremap('ca', vim.lsp.buf.code_action, { desc = 'Show code actions to fix stuff', buffer = bufnr })
 end
 
-local ok, mason_lsp = pcall(require, 'mason-lspconfig')
-if ok then
-    for _, serverName in ipairs(mason_lsp.get_installed_servers()) do
-        require('lspconfig')[serverName].setup {
-            on_attach = on_attach,
-            capabilities = capabilities
-        }
-    end
+for _, serverName in ipairs(mason_lsp.get_installed_servers()) do
+    lspconfig[serverName].setup {
+        on_attach = on_attach,
+        capabilities = capabilities
+    }
 end

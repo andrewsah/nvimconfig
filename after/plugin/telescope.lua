@@ -1,4 +1,11 @@
-require('telescope').setup {
+local ok, telescope, actions
+ok, telescope = pcall(require,'telescope')
+ok, actions = pcall(require,'telescope.actions')
+if not ok then
+    return
+end
+
+telescope.setup {
     defaults = {
         prompt_prefix = ' ',
         sorting_strategy = 'ascending',
@@ -16,12 +23,12 @@ require('telescope').setup {
         },
         mappings = {
             i = {
-                ['<C-j>'] = require('telescope.actions').move_selection_next,
-                ['<C-k>'] = require('telescope.actions').move_selection_previous,
-                ['<C-c>'] = require('telescope.actions').close,
+                ['<C-j>'] = actions.move_selection_next,
+                ['<C-k>'] = actions.move_selection_previous,
+                ['<C-c>'] = actions.close,
             },
         }
     }
 }
 
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')

@@ -4,6 +4,7 @@ opt.clipboard = 'unnamedplus'
 
 -- mouse support
 opt.mouse = 'a'
+opt.mousemodel = 'extend'
 
 -- line number and relative
 opt.number = true

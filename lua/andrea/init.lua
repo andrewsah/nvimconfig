@@ -9,4 +9,3 @@ for _, source in ipairs(sources) do
 	  error('Unable to load ' .. source .. '\n\n' .. msg)
   end
 end
-

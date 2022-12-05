@@ -1,11 +1,16 @@
 -- Setup nvim-cmp.
-local cmp = require('cmp')
-local lspkind = require('lspkind')
+local ok, cmp, lspkind, luasnip
+ok, cmp = pcall(require, 'cmp')
+ok, lspkind = pcall(require, 'lspkind')
+ok, luasnip = pcall(require, 'luasnip')
+if not ok then
+    return
+end
 
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {

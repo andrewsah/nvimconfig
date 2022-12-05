@@ -1,1 +1,6 @@
-require('nvim_comment').setup({ comment_empty = false })
+local ok, comment = pcall(require, 'nvim_comment')
+if not ok then
+    return
+end
+
+comment.setup({ comment_empty = false })
