@@ -15,7 +15,7 @@ lualine.setup {
         lualine_c = { 'branch', 'diff', 'diagnostics' },
         lualine_x = { 'encoding' },
         lualine_y = { 'filetype' },
-        lualine_z = { 'location' }
+        lualine_z = { 'location', 'progress' }
     },
     inactive_sections = {
         lualine_a = {},

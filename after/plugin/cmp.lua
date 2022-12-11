@@ -1,7 +1,13 @@
 -- Setup nvim-cmp.
 local ok, cmp, lspkind, luasnip
 ok, cmp = pcall(require, 'cmp')
+if not ok then
+    return
+end
 ok, lspkind = pcall(require, 'lspkind')
+if not ok then
+    return
+end
 ok, luasnip = pcall(require, 'luasnip')
 if not ok then
     return

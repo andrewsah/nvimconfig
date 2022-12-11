@@ -1,5 +1,8 @@
 local ok, mason, mason_lsp
 ok, mason = pcall(require, 'mason')
+if not ok then
+    return
+end
 ok, mason_lsp = pcall(require, 'mason-lspconfig')
 if not ok then
     return

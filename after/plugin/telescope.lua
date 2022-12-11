@@ -1,5 +1,8 @@
 local ok, telescope, actions
 ok, telescope = pcall(require,'telescope')
+if not ok then
+    return
+end
 ok, actions = pcall(require,'telescope.actions')
 if not ok then
     return

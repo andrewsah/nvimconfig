@@ -39,5 +39,8 @@ opt.completeopt = { 'menu', 'menuone', 'noselect' }
 opt.splitright = true
 opt.splitbelow = true
 
+opt.termguicolors = true
+opt.colorcolumn = "80"
+
 -- map leader to <Space>
 vim.g.mapleader = ' '

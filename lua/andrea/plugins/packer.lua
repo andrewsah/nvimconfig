@@ -1,65 +1,50 @@
 require('packer').startup(
-    function()
+function()
 
-        -- packer can manage itself
-        use('wbthomason/packer.nvim')
+    -- packer can manage itself
+    use('wbthomason/packer.nvim')
 
-        -- dependencies
-        use('nvim-lua/plenary.nvim')
-        use('kyazdani42/nvim-web-devicons')
+    -- dependencies
+    use('nvim-lua/plenary.nvim')
+    use('kyazdani42/nvim-web-devicons')
 
-        -- telescope (fuzzy finder)
-        use('nvim-telescope/telescope.nvim')
+    -- Generic plugins
+    use('nvim-telescope/telescope.nvim')                             -- telescope (fuzzy finder)
+    use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'})  -- fzf extension for telescope
+    use('nvim-lualine/lualine.nvim')                                 -- lualine (status line)
+    use("ellisonleao/gruvbox.nvim")                                  -- gruvbox theme
+    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})      -- tresitter (better syntax highlight)
+    use('nvim-treesitter/nvim-treesitter-context')                   -- sticky header
+    use('p00f/nvim-ts-rainbow')                                      -- colored brackets
+    use('terrortylor/nvim-comment')
+    use("rcarriga/nvim-notify")                                      -- popup window for notifications
 
-        -- fzf extension for telescope
-        use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- LSP (etc.) plugins
+    use('neovim/nvim-lspconfig')                                     -- config for native lsp
+    use{"williamboman/mason.nvim"}                                   -- helper for lsp's servers installation
+    use{"williamboman/mason-lspconfig.nvim"}
+    use('hrsh7th/nvim-cmp')                                          -- completition "engine"
+    use('hrsh7th/cmp-nvim-lsp')                                      -- lsp completition
+    use('hrsh7th/cmp-buffer')                                        -- buffer symbols completition
+    use('hrsh7th/cmp-path')                                          -- path completition
+    use('L3MON4D3/LuaSnip')
+    use('saadparwaiz1/cmp_luasnip')
+    use('onsails/lspkind.nvim')
 
-        -- lualine (status line)
-        use('nvim-lualine/lualine.nvim')
+    -- todo comments
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
-        -- gruvbox theme
-        use { "ellisonleao/gruvbox.nvim" }
+    use("j-hui/fidget.nvim")
 
-        -- tresitter (better syntax highlight)
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
-        -- config for native lsp
-        use('neovim/nvim-lspconfig')
-
-        -- helper for lsp's servers installation
-        -- use('williamboman/nvim-lsp-installer')
-        use { "williamboman/mason.nvim" }
-        use { "williamboman/mason-lspconfig.nvim" }
-
-        -- lsp completition
-        use('hrsh7th/nvim-cmp')
-        use('hrsh7th/cmp-nvim-lsp')
-        use('hrsh7th/cmp-buffer')
-        use('hrsh7th/cmp-path')
-        use('L3MON4D3/LuaSnip')
-        use('saadparwaiz1/cmp_luasnip')
-        use('onsails/lspkind.nvim')
-
-        -- comment
-        use('terrortylor/nvim-comment')
-
-        -- colored brackets
-        use('p00f/nvim-ts-rainbow')
-
-        -- sticky header
-        use('nvim-treesitter/nvim-treesitter-context')
-
-        -- todo comments
-        use {
-            "folke/todo-comments.nvim",
-            requires = "nvim-lua/plenary.nvim",
-            config = function()
-                require("todo-comments").setup {
-                    -- your configuration comes here
-                    -- or leave it empty to use the default settings
-                    -- refer to the configuration section below
-                }
-            end
-        }
-    end
+end
 )

@@ -1,6 +1,12 @@
 local ok, cmp_nvim_lsp, mason_lsp, lspconfig
 ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+if not ok then
+    return
+end
 ok, mason_lsp = pcall(require, 'mason-lspconfig')
+if not ok then
+    return
+end
 ok, lspconfig = pcall(require, 'lspconfig')
 if not ok then
     return
@@ -24,6 +30,6 @@ end
 for _, serverName in ipairs(mason_lsp.get_installed_servers()) do
     lspconfig[serverName].setup {
         on_attach = on_attach,
-        capabilities = capabilities
+        capabilities = capabilities,
     }
 end
